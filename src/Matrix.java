@@ -75,6 +75,8 @@ public class Matrix {
                     SOM[i][j] = M[i][j] + m1.GetMatrix()[i][j];
                 }
             }
+        }else{
+            System.out.println("You can't get sum of these Matrixes!");
         }
         Matrix som = new Matrix();
         som.setM(SOM);
@@ -82,6 +84,29 @@ public class Matrix {
         som.setWidthOfMatrix(widthOfMatrix);
         return som;
     }
+
+    protected Matrix MultipleOfMatrixes(Matrix m1){
+        int[][] MOM = new int[m1.getHeightOfMatrix()][widthOfMatrix];
+        Matrix mom = new Matrix();
+
+        mom.setWidthOfMatrix(widthOfMatrix);
+        mom.setHeightOfMatrix(m1.getHeightOfMatrix());
+        if(heightOfMatrix==m1.getWidthOfMatrix()){
+            for (int i = 0; i < m1.getHeightOfMatrix(); i++) {
+                for (int j = 0; j < widthOfMatrix; j++) {
+                    for (int k = 0; k < heightOfMatrix; k++) {
+                        MOM[i][j] += M[i][k] * m1.getM()[k][j];
+                    }
+                }
+            }
+        }else{
+            System.out.println("You can't get multiple of these Matrixes");
+        }
+        mom.setM(MOM);
+        return mom;
+    }
+
+
 
 
 

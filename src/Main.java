@@ -7,18 +7,14 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         Matrix m1 = new Matrix();
         m1.InitializeMatrix(sc);
-       // int[][] K = m1.MultipleWithNumber(2);
-       // int[][] H = m1.GetMatrix();
-       // m1.PrintMatrix(K);
-       // m1.PrintMatrix(H);
+
 
         Matrix m2 = new Matrix();
         m2.InitializeMatrix(sc);
-        //int[][] H2 = m2.GetMatrix();
-        //m2.PrintMatrix(H2);
-        Matrix Sum = m1.SumOfMatrix(m2);
-        PrintMatrix(Sum);
-        System.out.println();
+
+
+        Matrix mom = m1.MultipleOfMatrixes(m2);
+        PrintMatrix(mom);
     }
     public static void PrintMatrix(Matrix RandomM){
         for (int i = 0; i < RandomM.getHeightOfMatrix(); i++) {
