@@ -6,22 +6,23 @@ import java.util.Scanner;
 public class Matrix {
     private int widthOfMatrix;
     private int heightOfMatrix;
-    private List<int[]> Matrix = new ArrayList<>();
-
+    private int[][] M;
 
 
     protected void InitializeMatrix(Scanner sc){
-        heightOfMatrix = sc.nextInt();
+        int[] WH = StrMIntoIntM(sc.next().split(","),2);
+        widthOfMatrix = WH[0];
+        heightOfMatrix = WH[1];
+        M = new int[widthOfMatrix][heightOfMatrix];
         for (int i = 0 ;i<heightOfMatrix; i++){
             String[] str1 = sc.next().split(",");
-            widthOfMatrix = str1.length;
-            Matrix.add(StrMIntoIntM(str1));
+            M[i] = (StrMIntoIntM(str1,widthOfMatrix));
 
         }
     }
 
-    private int[] StrMIntoIntM(String[] str){
-        int[] INT= new int[widthOfMatrix];
+    private int[] StrMIntoIntM(String[] str, int width){
+        int[] INT= new int[width];
         for (int i = 0; i < INT.length; i++) {
             INT[i] = Integer.parseInt(str[i]);
         }
@@ -29,8 +30,8 @@ public class Matrix {
     }
 
     protected void PrintMatrix(){
-        for (int[] row : Matrix) {
-            System.out.println(Arrays.toString(row));
+        for (int i = 0; i < heightOfMatrix; i++) {
+            System.out.println(Arrays.toString(M[i]));
         }
     }
 
