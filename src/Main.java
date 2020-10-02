@@ -9,11 +9,11 @@ public class Main {
         m1.InitializeMatrix(sc);
 
 
-        Matrix m2 = new Matrix();
-        m2.InitializeMatrix(sc);
+       // Matrix m2 = new Matrix();
+        //m2.InitializeMatrix(sc);
 
 
-        Matrix mom = m1.MultipleOfMatrixes(m2);
+        Matrix mom = m1.MatrixeInDegree(3);
         PrintMatrix(mom);
     }
     public static void PrintMatrix(Matrix RandomM){

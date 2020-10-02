@@ -106,7 +106,19 @@ public class Matrix {
         return mom;
     }
 
+    protected Matrix MatrixeInDegree(int degree){
+        if (degree>1 && widthOfMatrix==heightOfMatrix){
+            Matrix DegreeMatrix = MultipleOfMatrixes(this);
+            for (int i = 0; i < degree-1; i++) {
+                DegreeMatrix = DegreeMatrix.MultipleOfMatrixes(this);
+            }
+            return DegreeMatrix;
+        }else{
+            System.out.println("You can't elevate this Matrix");
+        }
 
+
+    }
 
 
 
