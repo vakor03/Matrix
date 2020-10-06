@@ -11,12 +11,12 @@ public class Main {
 
        // Matrix m2 = new Matrix();
         //m2.InitializeMatrix(sc);
+        System.out.println("Hallo worl1d");
 
-
-        Matrix mom = m1.MatrixeInDegree(3);
+        Matrix mom = m1.TransponateMatrix();
         PrintMatrix(mom);
     }
-    public static void PrintMatrix(Matrix RandomM){
+    private static void PrintMatrix(Matrix RandomM){
         for (int i = 0; i < RandomM.getHeightOfMatrix(); i++) {
             System.out.println(Arrays.toString(RandomM.getM()[i]));
         }
