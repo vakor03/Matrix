@@ -11,7 +11,7 @@ public class Main {
 
        // Matrix m2 = new Matrix();
         //m2.InitializeMatrix(sc);
-        System.out.println("Hallo world");
+        System.out.println("Hallo worl1d");
 
         Matrix mom = m1.TransponateMatrix();
         PrintMatrix(mom);
