@@ -43,10 +43,6 @@ public class Matrix {
 
     }
 
-    protected int[][] GetMatrix(){
-        return M;
-    }
-
     private int[] StrMIntoIntM(String[] str, int width){
         int[] INT= new int[width];
         for (int i = 0; i < INT.length; i++) {
@@ -54,8 +50,6 @@ public class Matrix {
         }
         return INT;
     }
-
-
 
     protected int[][] MultipleWithNumber(int number){
         int[][] MWN = new int[heightOfMatrix][widthOfMatrix];
@@ -72,7 +66,7 @@ public class Matrix {
         if(m1.getHeightOfMatrix()==this.getHeightOfMatrix() && m1.getWidthOfMatrix()==this.getWidthOfMatrix()){
             for (int i = 0; i < heightOfMatrix; i++) {
                 for (int j = 0; j < widthOfMatrix; j++) {
-                    SOM[i][j] = M[i][j] + m1.GetMatrix()[i][j];
+                    SOM[i][j] = M[i][j] + m1.getM()[i][j];
                 }
             }
         }else{
@@ -115,12 +109,25 @@ public class Matrix {
             return DegreeMatrix;
         }else{
             System.out.println("You can't elevate this Matrix");
+            return this;
         }
 
 
     }
 
-
+    protected Matrix TransponateMatrix(){
+        int[][] TM= new int[widthOfMatrix][heightOfMatrix];
+        for (int i = 0; i < widthOfMatrix; i++) {
+            for (int j = 0; j < heightOfMatrix; j++) {
+                TM[i][j] = M[j][i];
+            }
+        }
+        Matrix TransMatrix = new Matrix();
+        TransMatrix.setHeightOfMatrix(widthOfMatrix);
+        TransMatrix.setWidthOfMatrix(heightOfMatrix);
+        TransMatrix.setM(TM);
+        return TransMatrix;
+    }
 
 
 }
